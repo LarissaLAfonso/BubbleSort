@@ -84,14 +84,15 @@ void selectionSort(int arriNumbers[], int iLength)
         
         for (int iInnerLoop = iOuterLoop + 1; iInnerLoop < iLength; iInnerLoop++)
         {
-            if (minValue > arriNumbres[iInnerLoop])
+            if (minValue > arriNumbers[iInnerLoop])
             {
                 minValue = arriNumbers[iInnerLoop];
             }
         }
-    }
 
     swapValue(arriNumbers[iOuterLoop], minValue);
+
+    }
 }
 
 void optimizedSelectionSort(int arriNumbers[], int iLength)
@@ -99,21 +100,21 @@ void optimizedSelectionSort(int arriNumbers[], int iLength)
     int minValue = 0;
     int iSwapIndex = 0;
 
-    for (int iOuterLoop =l 0; iOuterLoop < iLength; iOuterLoop++)
+    for (int iOuterLoop = 0; iOuterLoop < iLength; iOuterLoop++)
     {
         minValue = arriNumbers[iOuterLoop];
-        iInnerLoop = iOuterLoop;
+        int iInnerLoop = iOuterLoop;
 
         for (int iInnerLoop = iOuterLoop + 1; iInnerLoop < iLength; iInnerLoop++)
         {
-            if (minValue > arriNumbres[iInnerLoop])
+            if (minValue > arriNumbers[iInnerLoop])
             {
                 minValue = arriNumbers[iInnerLoop];
                 iSwapIndex = iInnerLoop;
             }
         }
+
+        swapValue(arriNumbers[iOuterLoop], arriNumbers[iSwapIndex]);
     }
-    
-    swapValue(arriNumbers[iOuterLoop], arriNumbers[iSwapIndex])
 }
 
